@@ -44,6 +44,7 @@ Django forms.
 2. Result - endpoin. here we check if there such realestateobject
 3. Ping  - endpoint. Cheks sttus code
 4. Histori - endpoint - show list of all requests.
+5. emulate_server - endpoint - doesnt do anything, but giving back data
 
 +79219507391 Andrey Mazo
 https://t.me/AndreyMazo
