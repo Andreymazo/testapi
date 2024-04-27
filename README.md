@@ -42,6 +42,7 @@ python manage.py runserver
 
 Django forms. 
 1. Query - endpoint. here we fill in form and send it to 
+Здесь нельзя редиректом, надо апи реквестом запрашивать, на выходных допилю, это канешна не по заданию.
 
 ![](/media/Screenshot%20from%202024-04-27%2015-12-28.png)
 
