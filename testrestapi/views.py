@@ -50,6 +50,7 @@ def query(request):
              #path('cutter_file/<int:pk1>/<int:pk2>', cutter_file, name='cutter_file'),
 
             print('cad_num', instance.cad_num, 'shirota', instance.shirota, 'dolgota', instance.dolgota)
+            ## Здесь нельзя редиректом, надо апи реквестом запрашивать
         return redirect(reverse('testrestapi:result', kwargs={'pk1':instance.cad_num, 'pk2':instance.shirota, 'pk3':instance.dolgota}))
     else:
        
