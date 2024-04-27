@@ -49,6 +49,8 @@ Django forms.
 
 3. Ping  - endpoint. Cheks sttus code
 4. Histori - endpoint - show list of all requests.
+![](/media/Screenshot%20from%202024-04-27%2015-12-48.png)
+
 5. emulate_server - endpoint - doesnt do anything, but giving back data
 
 First i desided to run cmd files: testrestapi/cmd_history.sh, testrestapi/cmd_ping.sh, testrestapi/cmd_query.sh, testrestapi/cmd_result.sh
