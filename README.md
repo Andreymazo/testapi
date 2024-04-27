@@ -48,7 +48,7 @@ Django forms.
 ![](/media/Screenshot%20from%202024-04-27%2015-12-23.png)
 
 3. Ping  - endpoint. Cheks sttus code
-![](/media/Screenshot%20from%202024-04-27%2015-12-28.png)
+![](/media/Screenshot%20from%202024-04-27%2015-12-37.png)
 
 4. Histori - endpoint - show list of all requests.
 ![](/media/Screenshot%20from%202024-04-27%2015-12-48.png)
