@@ -1,4 +1,5 @@
 # Testrestapi
+![](/media/Screenshot%20from%202024-04-27%2018-02-07.png)
 
 ![](/media/Screenshot%20from%202024-04-27%2014-50-17.png)
 
@@ -58,6 +59,8 @@ Django forms.
 First i desided to run cmd files: testrestapi/cmd_history.sh, testrestapi/cmd_ping.sh, testrestapi/cmd_query.sh, testrestapi/cmd_result.sh
 but there were inconviniences with csrf. For client better to put {csrftoken} in template and that it. intead of making additional request only to gain token.
 
+На проверке работа была 30 сек. Сказали: - Учи мат часть. Конкретно по работе не объяснили, что не подошло.
+Похоже формы не зашли, ну или моя "эмуляция" на 5 эндпоинте не впечатлила. Я то считаю ,что запрос он и в Африке запрос, хоть формой, хоть рестом, но хозяин-барин.
 
 +79219507391 Andrey Mazo
 https://t.me/AndreyMazo
