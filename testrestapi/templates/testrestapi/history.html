@@ -1,0 +1,36 @@
+{% include 'testrestapi/includes/main_menu.html' %}
+
+
+<table class="table table-dark table-striped">
+
+    <thead>
+            <h3 style="text-align: center;"> History </h3>
+    </thead>
+        <tbody>
+          <thead>
+            <tr>
+              <th scope="col">Кадаствровый номер</th>
+              <th scope="col">Широта</th>
+              <th scope="col">Долгота</th>
+              <th scope="col">Время создания</th>
+            </tr>
+          </thead>
+          {% for object in queryset %}
+                  <tbody>
+                    <td>
+                     {{object.cad_num}}
+                    </td>
+                    <td>
+                       {{object.shirota}}
+                    </td>
+                    <td>
+                        {{object.dolgota}}
+                    </td>
+                    <td>
+                        {{object.created}}
+                    </td>
+                  </tbody>
+
+          {% endfor %}
+        </tbody>
+  </table>
