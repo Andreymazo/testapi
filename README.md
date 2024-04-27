@@ -46,5 +46,9 @@ Django forms.
 4. Histori - endpoint - show list of all requests.
 5. emulate_server - endpoint - doesnt do anything, but giving back data
 
+First i desided to run cmd files: testrestapi/cmd_history.sh, testrestapi/cmd_ping.sh, testrestapi/cmd_query.sh, testrestapi/cmd_result.sh
+but there were inconviniences with csrf. For client better to put {csrftoken} in template and that it. intead of making additional request only to gain token.
+
+
 +79219507391 Andrey Mazo
 https://t.me/AndreyMazo
