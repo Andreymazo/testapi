@@ -45,6 +45,8 @@ Django forms.
 ![](/media/Screenshot%20from%202024-04-27%2015-12-28.png)
 
 2. Result - endpoin. here we check if there such realestateobject
+![](/media/Screenshot%20from%202024-04-27%2015-12-23.png)
+
 3. Ping  - endpoint. Cheks sttus code
 4. Histori - endpoint - show list of all requests.
 5. emulate_server - endpoint - doesnt do anything, but giving back data
