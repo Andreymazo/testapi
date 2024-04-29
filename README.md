@@ -72,5 +72,7 @@ we must see:
 
 Almost  done. Receive result at receive/ endpoint, have to pass at result/ endpoint and thats it.
 
+1min video:
+
 +79219507391 Andrey Mazo
 https://t.me/AndreyMazo

@@ -5,5 +5,6 @@ class HistoryApi(models.Model):
     shirota = models.CharField()
     dolgota = models.CharField()
     created = models.DateTimeField(auto_now_add=True)
+    result=models.BooleanField()
 
 
