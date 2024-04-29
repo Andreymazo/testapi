@@ -64,7 +64,7 @@ but there were inconviniences with csrf. For client better to put {csrftoken} in
 Похоже формы не зашли, ну или моя "эмуляция" на 5 эндпоинте не впечатлила.
 
 Подумал. На эндпоинте result надо ари запрос сделать к эндпоинту emulate_server, а не просто обращаться к базе. Тут у меня ошибка
- моя "эмуляция" на 5 эндпоинте -  не пойдет. Here we must run server in background mode. DFaphne will do, i guess. 
+ моя "эмуляция" на 5 эндпоинте -  не пойдет. Here we must run server in background mode. Daphne will do, i guess. 
 
 ![](/media/Screenshot%20from%202024-04-27%2021-40-57.png)
 
