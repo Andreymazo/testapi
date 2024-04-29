@@ -73,6 +73,7 @@ we must see:
 Almost  done. Receive result at receive/ endpoint, have to pass at result/ endpoint and thats it.
 
 1min video:
+[Screencast from 29.04.2024 23:03:48.webm](https://github.com/Andreymazo/testapi/assets/116811819/d91c788b-ba92-4b79-ad6c-5d03bb84ba22)
 
 +79219507391 Andrey Mazo
 https://t.me/AndreyMazo
