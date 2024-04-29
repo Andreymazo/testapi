@@ -3,15 +3,11 @@ import os
 import re
 import time
 import django
-from django.http import HttpResponse
-from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from config.settings import BASE_URL
 from testrestapi2.forms import RealEstForm
-from testrestapi.models import RealEstateObject
-from testrestapi.serializers import RealEstateObject, RealEstateObjectSerilizer
-from django.shortcuts import redirect, render, reverse
+from django.shortcuts import render
 import requests
 from testrestapi2.models import HistoryApi
 from django.views.decorators.csrf import csrf_exempt
