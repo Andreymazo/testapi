@@ -1,7 +1,9 @@
 import json
 import os
+import re
 import time
 import django
+from django.http import HttpResponse
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -101,6 +103,7 @@ def result(request, **kwargs):
     context = {
                 'result':result
         }
+    time.sleep(10)
     return render(request, 'testrestapi/templates/testrestapi/result.html', context)
 
 def ping(request):
@@ -119,6 +122,43 @@ def history(request):
     }
     return render (request, 'testrestapi/templates/testrestapi/history.html', context)
 
+from django.views.decorators.csrf import csrf_exempt
+import requests
+
+def values_to_param(filter_query, param):
+    
+    param = re.compile(f"{param}=(.*)")
+    param = param.findall(filter_query)
+    return param[0]
+    
+@csrf_exempt
+def receive(request, **kwargs):
+    # cad_num=kwargs['pk1']
+    # shirota=kwargs['pk2']
+    # dolgota=kwargs['pk3']
+    print('request.content1', request.META)
+    result = 'Прошли черерз receive'
+    context = {
+                'result':result
+        }
+    
+    # response = requests.post(url, params=data)#, headers={ 'X-CSRFToken': clear_token})
+    # print('response.headers', response_get.headers)
+    # print('request.META', request.META['HTTP_COOKIE'])
+    # data = json.dumps(result)
+    # print('filter_query_all', filter_query_all, 'filter_lst', filter_lst)
+    # print('result', result)
+    print('request.__dict__', request.__dict__)
+    print("request.META['QUERY_STRING']", request.META['QUERY_STRING'])
+    filter_query = request.META['QUERY_STRING']
+    result='result'
+    result = values_to_param(filter_query,result)
+    print(filter_query)
+    print('result==========', result)
+    return render(request, 'testrestapi/templates/testrestapi/result.html', context)
+    # return redirect(reverse('testrestapi:result/<int:pk1>/<int:pk2>/<int:pk3>'), kwargs={'result':result})
+    # return HttpResponse(data, content_type='json')
+    # return render(request, 'testrestapi/templates/testrestapi/result.html', context)
 # @api_view(['GET', 'PUT', 'DELETE'])
 # def snippet_detail(request, pk):
 #     """

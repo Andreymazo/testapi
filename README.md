@@ -70,6 +70,7 @@ we must see:
 
 ![](/media/Screenshot%20from%202024-04-29%2010-20-53.png)
 
+Almost  done. Receive result at receive/ endpoint, have to pass at result/ endpoint and thats it.
 
 +79219507391 Andrey Mazo
 https://t.me/AndreyMazo
