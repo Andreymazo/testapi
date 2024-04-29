@@ -74,8 +74,5 @@ Almost  done. Receive result at receive/ endpoint, have to pass at result/ endpo
 
 1min video:
 
-![](/media/Screencast%20from%2029.04.2024%2023:03:48.webm)
-
-
 +79219507391 Andrey Mazo
 https://t.me/AndreyMazo
