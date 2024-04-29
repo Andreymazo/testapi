@@ -63,7 +63,6 @@ def query(request):
 
     return render(request, 'testrestapi/templates/testrestapi/query.html', context) 
 
-
 def ping(request):
     # url = f'{BASE_URL}/emulate_server'
     url = 'http://127.0.0.1:8002/'
@@ -79,8 +78,6 @@ def history(request):
         'queryset': queryset
     }
     return render (request, 'testrestapi/templates/testrestapi/history.html', context)
-
-
 
 def values_to_param(filter_query, param):
     
