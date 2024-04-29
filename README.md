@@ -68,7 +68,7 @@ but there were inconviniences with csrf. For client better to put {csrftoken} in
 or just python manage.py runserver 8002
 we must see:
 
-![](/media/Screenshot%20from%202024-04-27%2021-40-57.png)
+![](/media/Screenshot%20from%202024-04-27%2021-40-53.png)
 
 
 +79219507391 Andrey Mazo
