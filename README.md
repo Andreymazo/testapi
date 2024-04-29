@@ -66,6 +66,9 @@ but there were inconviniences with csrf. For client better to put {csrftoken} in
 Подумал. На эндпоинте result надо ари запрос сделать к эндпоинту emulate_server, а не просто обращаться к базе. Тут у меня ошибка
  моя "эмуляция" на 5 эндпоинте -  не пойдет. Here we must create new project and run server in background mode. Daphne will do, i guess. daphne -b 0.0.0.0 -p 8002 config.asgi:application
 or just python manage.py runserver 8002
+we must see:
+
+![](/media/Screenshot%20from%202024-04-27%2021-40-57.png)
 
 ![](/media/Screenshot%20from%202024-04-27%2021-40-57.png)
 
