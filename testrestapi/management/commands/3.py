@@ -13,6 +13,9 @@ class Command(BaseCommand):
         # token = Token.objects.create(user=request.user)
         # print(token.key)
         print(os.path.join(BASE_URL,'/emulate_server'))
+        print(f'{BASE_URL}/emulate_server')
+
+        
         # response = requests.get(f"{BASE_URL}?cad_num=23&shirota=25&dolgota=55")
         # print(response.json())
         # print(BASE_URL)

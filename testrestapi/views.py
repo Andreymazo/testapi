@@ -1,3 +1,4 @@
+import os
 import time
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -24,7 +25,7 @@ def home(request, cad_num, shirota, dolgota):# Этот ендпоинт про�
             print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
         
         except :
-            print('----------------------------------------------------------------------------------')
+            print('--------------------------------------------iiii--------------------------------------')
             context = {
                 'reobject':reobject
         }
@@ -64,6 +65,15 @@ def result(request, **kwargs):
     dolgota=kwargs['pk3']
 
     result = False
+    print('request.content1', request.META['CONTENT_TYPE'])#<class 'django.core.handlers.wsgi.WSGIRequest'>##equest.META['CONTENT_TYPE'] text/plain
+    url = os.path.join(BASE_URL,'/emulate_server')
+    response = requests.get(url)
+    print('response.content', response.headers)# response.headers {'Date': 'Mon, 29 Apr 2024 03:27:48 GMT', 'Server': 'WSGIServer/0.2 CPython/3.10.5', 'Content-Type': 'text/html; charset=utf-8', 'X-Frame-Options': 'DENY', 'Vary': 'Cookie', 'Content-Length': '1455', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Set-Cookie': 'csrftoken=eqFVnpaPL9hU1CyHQEVwOqcSKmvuhx10; expires=Mon, 28 Apr 2025 03:27:48 GMT; Max-Age=31449600; Path=/; SameSite=Lax'}
+
+    # headers = {'Content-type': 'application/json'}
+    # r = requests.get(url, headers=headers)
+
+    print('type(response)', type(response))
     try:
         reobject=RealEstateObject.objects.all().get(cad_num=cad_num, shirota=shirota, dolgota=dolgota)
         context = {
@@ -73,15 +83,17 @@ def result(request, **kwargs):
         print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
         
     except :
-        print('----------------------------------------------------------------------------------')
+        print('---------------------------------------ee-------------------------------------------')
+        # print('request.content2', request.content)
         context = {
                 'result':result
         }
     return render(request, 'testrestapi/templates/testrestapi/result.html', context)
 
 def ping(request):
-    
-    page = requests.get(BASE_URL,'/emulate_server')
+    # url = f'{BASE_URL}/emulate_server'
+    url = 'http://127.0.0.1:8002/'
+    page = requests.get(url)
     context = {
         'status_code':page.status_code
     }
