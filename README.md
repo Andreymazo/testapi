@@ -70,7 +70,6 @@ we must see:
 
 ![](/media/Screenshot%20from%202024-04-27%2021-40-57.png)
 
-![](/media/Screenshot%20from%202024-04-27%2021-40-57.png)
 
 +79219507391 Andrey Mazo
 https://t.me/AndreyMazo
