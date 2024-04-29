@@ -63,8 +63,8 @@ but there were inconviniences with csrf. For client better to put {csrftoken} in
 На проверке работа была 30 сек. Сказали: - Учи мат часть. Конкретно по работе не объяснили, что не подошло.
 Похоже формы не зашли, ну или моя "эмуляция" на 5 эндпоинте не впечатлила.
 
-Подумал. На эндпоинте result надо ари запрос сделать к эндпоинту emulate_server, а не просто обращаться к базе. Тут у меня ошибка
- моя "эмуляция" на 5 эндпоинте -  не пойдет. Here we must create new project and run server in background mode. Daphne will do, i guess. daphne -b 0.0.0.0 -p 8002 config.asgi:application
+Подумал. На эндпоинте result надо аgи запрос сделать к эндпоинту emulate_server, а не просто обращаться к базе. Тут у меня ошибка
+ моя "эмуляция" на 5 эндпоинте -  не пойдет. Here we must create new project with base and model RealEstateObject and run server in background mode. Daphne will do, i guess. daphne -b 0.0.0.0 -p 8002 config.asgi:application
 or just python manage.py runserver 8002
 we must see:
 

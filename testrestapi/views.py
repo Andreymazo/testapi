@@ -1,5 +1,7 @@
+import json
 import os
 import time
+import django
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -63,30 +65,40 @@ def result(request, **kwargs):
     cad_num=kwargs['pk1']
     shirota=kwargs['pk2']
     dolgota=kwargs['pk3']
-
+    
     result = False
     print('request.content1', request.META['CONTENT_TYPE'])#<class 'django.core.handlers.wsgi.WSGIRequest'>##equest.META['CONTENT_TYPE'] text/plain
     # url = os.path.join(BASE_URL,'/emulate_server')
     url = 'http://localhost:8002'
-    response = requests.get(url)
-    print('response.content', response.headers)# response.headers {'Date': 'Mon, 29 Apr 2024 03:27:48 GMT', 'Server': 'WSGIServer/0.2 CPython/3.10.5', 'Content-Type': 'text/html; charset=utf-8', 'X-Frame-Options': 'DENY', 'Vary': 'Cookie', 'Content-Length': '1455', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Set-Cookie': 'csrftoken=eqFVnpaPL9hU1CyHQEVwOqcSKmvuhx10; expires=Mon, 28 Apr 2025 03:27:48 GMT; Max-Age=31449600; Path=/; SameSite=Lax'}
+    # response = requests.get(url)
+    data = {
+    "cad_num": cad_num,
+    "shirota": shirota,
+    "dolgota": dolgota,
+}   
+    # response = requests.get(url)
+    # my_csrf_token = request.META['HTTP_COOKIE']
+    # clear_token = re.compile("=(.*)")
+    # clear_token = clear_token.findall(my_csrf_token)[0]
+    response = requests.post(url, params=data)#, headers={ 'X-CSRFToken': clear_token})
+    # print('response.headers', response_get.headers)
+    print('request.META', request.META['HTTP_COOKIE'])
+    # print(clear_token)
+    print(response)
+
+    # print(request.COOKIES.get('XSRF-TOKEN'))
+    # print(django.middleware.csrf.get_token(request)
+    
+    # print(response_get.cookies['HTTP_COOKIE'])
+    # headers = {'X-CSRFToken': csrf_token}
+    # print('response.headers', response.headers)# response.headers {'Date': 'Mon, 29 Apr 2024 03:27:48 GMT', 'Server': 'WSGIServer/0.2 CPython/3.10.5', 'Content-Type': 'text/html; charset=utf-8', 'X-Frame-Options': 'DENY', 'Vary': 'Cookie', 'Content-Length': '1455', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'same-origin', 'Cross-Origin-Opener-Policy': 'same-origin', 'Set-Cookie': 'csrftoken=eqFVnpaPL9hU1CyHQEVwOqcSKmvuhx10; expires=Mon, 28 Apr 2025 03:27:48 GMT; Max-Age=31449600; Path=/; SameSite=Lax'}
 
     # headers = {'Content-type': 'application/json'}
     # r = requests.get(url, headers=headers)
 
-    print('type(response)', type(response))
-    try:
-        reobject=RealEstateObject.objects.all().get(cad_num=cad_num, shirota=shirota, dolgota=dolgota)
-        context = {
-                'result':True
-        }
-        time.sleep(2)# Не обязательно все 60 сек ждать, достаточно 2
-        print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-        
-    except :
-        print('---------------------------------------ee-------------------------------------------')
-        # print('request.content2', request.content)
-        context = {
+    # print('type(response)', type(response))
+    
+    context = {
                 'result':result
         }
     return render(request, 'testrestapi/templates/testrestapi/result.html', context)
